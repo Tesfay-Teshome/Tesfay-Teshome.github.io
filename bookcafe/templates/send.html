@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">  
+</script>  
+
+<body>
+    <h1>checkbox trying</h1>
+    <label class="form-label" for="username">UserName</label>
+    <input type="text" name="username"  id="username" class="form-control" /><br><br>
+    <label class="form-label" for="email">Email</label>
+    <input type="email" name="email"  id="email" class="form-control" /><br><br>
+    <label class="form-label" for="password1">Password</label>
+    <input type="password" name="password1"  id="password1" class="form-control" /><br><br>
+    <label class="form-label" for="password2">Confirm Password</label>
+    <input type="password" name="password2"  id="password2" class="form-control" /><br><br>
+                        
+    
+
+    checkbox1 <input type="checkbox" name="fav" value="cat1" class="get_value">
+    checkbox2 <input type="checkbox" name="fav"value="cat2" class="get_value">
+    checkbox3 <input type="checkbox" name="fav"value="cat3" class="get_value">
+    checkbox4 <input type="checkbox" name="fav"value="cat4" class="get_value">
+    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+    <h4 id="result"></h4>
+
+
+<br>
+
+   <script>
+    $(document).ready(function(){
+        $('#submit').click(function(){
+            var insert = [];
+            $('.get_value').each(function(){
+                if ($(this).is(":checked")){
+                    insert.push($(this).val());
+                }
+
+            });
+            insert = insert.toString();
+            var insert_string = 'checkboxvalue='+ insert;
+            $.ajax({
+                method:"POST",
+                url: "/chbox",
+                data: insert_string,
+                cache: false,
+                success: function(data){
+                    $("#result").html(data);
+                }
+            })
+        });
+    });
+   </script>
+   <h1>{{msg}}</h1>
+</body>
+{% endblock %}

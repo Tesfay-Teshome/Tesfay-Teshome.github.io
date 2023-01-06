@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+ 
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.css"/>
+
+{% block content%}
+<h1 align="center">Search Any Book from 100,000 books</h1>
+<div class="container">
+    <table id="data" class=" display table table-dark table-striped" style="width: 100%" data-filter-control="true" data-show-search-clear-button="true">
+        <thead>
+            <tr>
+                {% for header in data[0].keys() %}
+                
+                    <th scope="col">
+                        <strong>{{header}}</strong>
+                    </th>
+                {% endfor%}            
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{ list(row.values())[0] }}</td>
+                    <td>{{ list(row.values())[1] }}</td>
+                    <td>{{ list(row.values())[2] }}</td>
+                    <td>{{ list(row.values())[3] }}</td>
+                    <td>{{ list(row.values())[4] }}</td>
+                    <td>
+                        <div class ="row-5" >
+                            <img  src="{{ row.Image_url }}">
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="text-center">
+    {% for page in total_pages %}
+      {% if request.args.get('page') == str(page + 1) or (request.args.get('page') == none and page == 0) %}
+        <a href="{{str(request.url).split('?')[0] + '?page=' + str(page + 1)}}" class="btn btn-primary mt-4 mb-3">{{page + 1}}</a>
+      {% else %}
+        <a href="{{str(request.url).split('?')[0] + '?page=' + str(page + 1)}}" class="btn btn-outline-primary mt-4 mb-3">{{page + 1}}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+  
+ <script>
+    $(document).ready(function () {
+    $.noConflict();
+    var table = $('#data').DataTable();
+});</script>
+{% endblock%}
+

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card-header" ><h3>Available Books</h3></div>
+<div class="container-xl px-4 mt-4" >
+    <div class="row">
+
+    {% for book in all_book %}
+
+
+    <div class="col-md-4" ><center>
+             <img src="{{url_for('static',filename ='book.png')}}" class="img-fluid rounded-start" 
+                alt="book-image" style="width: 150px; height: 230px; margin-left: 0px; margin-top: 10px; ">
+            <div class="card-body " s>
+             <h5 class="card-title" ><span class="badge bg-success">{{book.title}}</span></h5>
+
+              <p class="card-text">{{book.description}}</p>
+              <small>Author: {{book.author}}</small>
+              <p class="card-text"><small class="text-muted">{{book.category}}</small></p>
+              
+            </div>
+            <a href="{{url_for('view.single_book', id=book.id)}}"><button class="btn btn-success" style="margin-right: 10px;">Details</button> </a><br><br>
+          </div></center><br>
+
+    {%endfor%}    
+</div>
+</div>
+{% endblock%}

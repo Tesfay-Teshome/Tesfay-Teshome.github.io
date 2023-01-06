@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- <h1>Add Book</h1>
+<h2>top</h2> -->
+<!-- <img src="{{url_for('static',filename ='Background Image.jpg')}}" alt="homePageBackgroundImage" class="backgroundImage"> -->
+
+<div class="cover" 
+     style="display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            height: 90vh;
+            background-image: url(/static/BackImage1.avif);
+            background-size: cover;
+            ">
+        <div style="color: rgba(251, 248, 248, 0.962); padding-left:100px; margin: auto;"><h1 style="width: 500px;"> <img src="/static/LOGOFINALEDIT.png" alt="" style="border: 4px; border-radius: 10px; width: 350px; height: 130px; "></h1></div>
+        <div style="width: 500px;height: 300px; margin: auto;padding: 20px;">
+            <h1 style="color: rgba(251, 248, 248, 0.962); font-family: 'Bai Jamjuree', sans-serif; font-weight: bold;"> What Kind of Book Do You Want ? <br> We Have It !!! </h1><br>
+            <h3 style="color: rgba(251, 248, 248, 0.962); font-family: 'Bai Jamjuree', sans-serif; font-weight: normal;
+            font-style: italic;"> The most secure and preference oriented Book Website for your need.</h3>
+        </div>
+        
+</div>
+
+<br><br>
+
+<div class="recentlyAddedBooks" 
+     style="display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px;
+            height: 900px;
+            background-image: url(/static/BackImage2.PNG);
+            background-size: cover;
+            ">
+        <div style="color: rgba(251, 248, 248, 0.962); margin: auto;"><img src="/static/book.png" alt="" style="border: 4px; border-radius: 10px; width: 300px; height: 400px; "></div>
+        <div style="width: 500px;height: 300px; margin: auto;">
+            <h1 style="color: rgba(251, 248, 248, 0.962); font-family: 'Bai Jamjuree', sans-serif; font-weight: bold;"> Recently Added Books</h1><br>
+            <h3 style="color: rgba(251, 248, 248, 0.962); font-family: 'Bai Jamjuree', sans-serif; font-weight: normal;
+            font-style: italic;"> Book Title</h3>
+            <h3 style="color: rgba(251, 248, 248, 0.962); font-family: 'Bai Jamjuree', sans-serif; font-weight: normal;
+            font-style: italic;"> Book Author</h3>
+            <h3 style="color: rgba(251, 248, 248, 0.962); font-family: 'Bai Jamjuree', sans-serif; font-weight: normal;
+            font-style: italic;"> Book Description</h3>
+            <h3 style="color: rgba(251, 248, 248, 0.962); font-family: 'Bai Jamjuree', sans-serif; font-weight: normal;
+            font-style: italic;"> Book category</h3><br>
+        </div>
+
+        <button class = "nextBook" style="border: 2px; border-radius: 50px; width: 50px; height: 50px; margin: auto;"><b><img src="/static/arrow.webp" alt="next" style="height: 30px;"></b></button>
+        
+</div>
+
+<br><br>
+
+
+<div class="about" 
+     style="
+            justify-content: center;
+            padding: 50px;
+            text-align: center;
+            margin-bottom: 10px;
+            background-image: url(/static/BackImage3.PNG);
+            background-size: cover;
+            ">
+        <div style="padding-bottom: 30px; font-family: 'Bai Jamjuree', sans-serif; font-weight: bold;"><h1 style="color: rgba(251, 248, 248, 0.962); font-family: 'Bai Jamjuree', sans-serif; font-weight: bold;">About</h1></div>
+        <p style="color:rgba(251, 248, 248, 0.962); padding-bottom: 80px;font-family: 'Bai Jamjuree', sans-serif; font-weight: normal;">
+            This application is designed to solve the problem many people are facing in choice of book on many websites. This book recommendation app was developed using HTML, CSS, JavaScript and Python.  
+        </p>
+        <div style="color:rgba(251, 248, 248, 0.962);font-style: italic;font-family: 'Bai Jamjuree', sans-serif; font-weight: bold;">
+            2023 ALX Cohort 6 - All rights reserved | GitHub Accounts of The Developers - <a href="https://github.com/Biruk-G3"
+             style="color: #ffff; font-size: 15px; text-decoration: none;font-weight: normal;">Biruk Gelelcha</a> / <a href="https://github.com/Iwamgad" style="color: #ffff; font-size: 15px; text-decoration: none;font-weight: normal;">Dagmawi Ayneabeba</a> / <a href="https://github.com/Tesfay-Teshome" style="color: #ffff; font-size: 15px; text-decoration: none;font-weight: normal;">Tesfay Teshome</a>
+        </div>
+</div>
+    
+{% endblock%}

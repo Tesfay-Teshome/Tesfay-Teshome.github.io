@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{book.title}}</h1>
+
+
+    <div class="card mb-3" >
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{url_for('static',filename ='book.png')}}" class="img-fluid rounded-start" alt="book-image" style="margin-left: 20px; margin-top: 20px; margin-bottom: 20px; height: 400px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h1 class="card-title">{{book.title}}</h1>
+              <h5 class="card-title">Author: {{book.author}}</h5>
+              <p class="card-text">category: {{book.category_id}}</small></p>
+              <p class="card-text"><small class="text-muted">{{book.description}}</small></p>
+              <div>
+                <a href="#"><button class="btn btn-success" >Download</button> </a>
+                <a href="#"><button class="btn btn-primary" >Recomend</button> </a>
+                <a href="{{url_for('view.books')}}"><button class="btn btn-secondary" style="float: right;">Back</button> </a><br><br>
+              </div>
+              
+            </div>
+             </div>
+        </div>
+      </div>
+
+  
+{% endblock%}
